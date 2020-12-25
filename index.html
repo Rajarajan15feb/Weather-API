@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css"
+      integrity="sha384-3fdgwJw17Bi87e1QQ4fsLn4rUFqWw//KU0g8TvV6quvahISRewev6/EocKNuJmEw"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./weather.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-secondary bg-info text-center">
+      <a class="navbar-brand text-center" href="#">Weather App</a>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="Enter a City" class="mt-3">City</label>
+            <input type="text" id="city" placeholder="Enter City name----" />
+            <button type="button" class="btn btn-outline-primary btn-sm submit">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container weather-display">
+      <div class="row">
+        <div class="col data1">
+          <!-- <h3 class="place">Coimbatore</h3>
+          <img src="./Weather/1" alt="">
+          <h2 class="temperature">26 &#8451</h2> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col data2"></div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+.data1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: grey; */
+  padding: 2rem 0;
+  margin: 0 35%;
+}
+
+.temperature {
+  padding: 1rem;
+}
+
+img {
+  max-width: 100%;
+  width: 250px;
+}
