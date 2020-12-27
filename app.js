@@ -11,11 +11,14 @@ function pullData(e) {
   const ui = new UI;
 
   loc.locData(city.value).then((response) => {
-    console.log(response, response.length, response[0].Key);
 
-    if (response.length===0) {
-  
-      console.log("Enterted location is not valid or Entered is not available");
+    if (response.length === 0) {
+      const data1 = document.querySelector('.data1');
+      data1.innerHTML = `<h2>Entered city value is incorrect.......</h2>`;
+      data1.style.color = 'red';
+      setTimeout(() => {
+        data1.innerHTML = '';
+      }, 3000);
     } else if (response.length >= 1) {
     response.forEach((repo, index)=> {
       if (index === 0) {
@@ -57,12 +60,18 @@ class weatherDetails{
     // console.log(locdetail);
   
     const response = await locdetail.json();
+
+    // console.log(response);
+
+    // console.log(response.length);
   
     return response;
   }
 
   async locWeather(locationid) {
     const weather = await fetch(`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationid}?apikey=${this.id}`);
+
+    // console.log(weather);
 
     const hourlyData = await weather.json();
 
@@ -85,14 +94,10 @@ class UI{
     console.log(current);
     const temp = Math.floor(((current[0].Temperature.Value)-32) * 0.56);
     const data1 = document.querySelector('.data1');
-    data1.innerHTML = `<h3 class="place">${response[0].LocalizedName}</h3>
+    data1.innerHTML = `<h3 class="place">${response[0].LocalizedName},${response[0].AdministrativeArea.LocalizedName} </h3>
     <img class="weather-icon" src="./Weather/${current[0].WeatherIcon}.png">
     <h3 class="icon-phrase">${current[0].IconPhrase}<h3>
     <h2 class="temperature">${temp}&#8451</h2>
     <h3 class-"rain-possibility>Chance of Rain: ${current[0].PrecipitationProbability}&#37</h3>`;
   }
 }
-
-
-
-
