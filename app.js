@@ -50,7 +50,7 @@ function pullData(e) {
 
 class weatherDetails{
  constructor() {
-   this.id = '58Gh8VytOsjyVO6hGMIEGTmGJzvvRd1d';
+   this.id = 'G3Mn6GZwqHpVTxAXgSGUQ4CmZ1EUAvkY';//58Gh8VytOsjyVO6hGMIEGTmGJzvvRd1d
   }
   
   async locData(e) {
