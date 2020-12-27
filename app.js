@@ -55,7 +55,7 @@ class weatherDetails{
   
   async locData(e) {
     
-    const locdetail = await fetch(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${this.id}&q=${city.value}`);
+    const locdetail = await fetch(`https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${this.id}&q=${city.value}`);
   
     // console.log(locdetail);
   
@@ -69,7 +69,7 @@ class weatherDetails{
   }
 
   async locWeather(locationid) {
-    const weather = await fetch(`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationid}?apikey=${this.id}`);
+    const weather = await fetch(`https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationid}?apikey=${this.id}`);
 
     // console.log(weather);
 
@@ -79,7 +79,7 @@ class weatherDetails{
   }
   
   async currentWeather(locationid) {
-    const temp = await fetch(`http://dataservice.accuweather.com/forecasts/v1/hourly/1hour/${locationid}?apikey=${this.id}`);
+    const temp = await fetch(`https://dataservice.accuweather.com/forecasts/v1/hourly/1hour/${locationid}?apikey=${this.id}`);
 
     const current = await temp.json();
 
